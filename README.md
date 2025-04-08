@@ -1,5 +1,21 @@
-# 【Raspberry Pi】カードリーダー式在籍確認システム
+# 【Raspberry Pi】勤怠管理システム表示部
 
 ## システム概要図
+![システム概要図](https://raw.githubusercontent.com/Sclas6/AttendanceDisplaySystem/main/document/%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%A6%82%E8%A6%81%E5%9B%B3.png)
 
-![システム概要図](https://github.com/Sclas6/AttendanceDisplaySystem/blob/main/document/%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%A6%82%E8%A6%81%E5%9B%B3.png?raw=true)
+## 仕様定義
+- マグネット方式の勤怠管理システム風UI
+- 在籍情報は「出勤」「休憩」「退勤」の3つ
+- 学年ごとに情報をソートして色分け表示
+- 勤怠している学生順の表示に対応
+- 登録名押下で勤怠情報の統計をグラフ表示
+- Raspberry PiのGPIOピンによる表示切替に対応
+
+## 非機能要件
+- 勤怠情報は名前による管理ではなくUUIDによって管理することでセキュリティを担保
+- 勤怠情報グラフはアクセスがある度に更新し，生成したURLを返却
+- 在籍者とその学年はJSON形式によって定義
+- フロントエンド，バックエンド，GPIO制御部はサービスファイルで実行
+
+## 補足
+- Raspberry PiのディスプレイサーバにはX11を設定すること
