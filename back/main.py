@@ -84,6 +84,8 @@ def fix_json(data_raw: requests.Response):
     data_fixed = dict()
     data_fixed["content"] = list()
     for d in data["data"]:
+        if d["name"][0] == ' ':
+            d["name"] = d["name"][1:]
         data_fixed["content"].append(d)
     return data_fixed
 

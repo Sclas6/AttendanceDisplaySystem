@@ -1,7 +1,7 @@
 .venv/
 __pycache__/
 node_modules/
-*.png
+graphs/
 *.pkl
 test.*
 users.*
