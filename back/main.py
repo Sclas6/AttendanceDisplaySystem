@@ -69,17 +69,6 @@ def gen_graph(df):
     return filename
 
 def fix_json(data_raw: requests.Response):
-    """data = data_raw.json()
-    data_fixed = dict()
-    data_fixed["content"] = list()
-    for d in data["results"]:
-        user = dict()
-        #print(data)
-        user["name"] = d["properties"]["名前"]["title"][0]["text"]["content"]
-        user["status"] = d["properties"]["区分"]["select"]["name"]
-        time_str = d["properties"]["時間"]["date"]["start"] # Like '2024-11-11T11:45:00.000+09:00'
-        user["time"] = datetime.datetime.strptime(time_str, "%Y-%m-%dT%H:%M:%S.000+09:00")
-        data_fixed["content"].append(user)"""
     data = data_raw.json()
     data_fixed = dict()
     data_fixed["content"] = list()
@@ -98,9 +87,6 @@ def add_grade(data_fixed):
         else:
             user["grade"] = "UNKNOWN"
     return data_fixed
-
-NOTION_ACCESS_TOKEN = 'secret_BwVBrA563VsRztJHEEhwck1Xtik5dg6fyOkTUv91hiS'
-NOTION_DATABASE_ID = "1289f9f8038b809bbfe4c4087bf598f6"
 
 app = FastAPI()
 origins = [
