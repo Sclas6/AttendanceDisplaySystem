@@ -1,0 +1,15 @@
+[Unit]
+Description=FastAPI
+After=syslog.target network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/kintai/server/back
+ExecStart=/home/kintai/server/back/.venv/bin/python -m uvicorn main:app --host=172.16.15.7 --port=8000
+KillMode=process
+Restart=always
+User=kintai
+Group=root
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=React
+After=syslog.target network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/kintai/server/front
+ExecStart=npm run start
+KillMode=process
+Restart=always
+User=kintai
+Group=root
+
+[Install]
+WantedBy=multi-user.target

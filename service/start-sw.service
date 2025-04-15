@@ -1,0 +1,16 @@
+[Unit]
+Description=SW
+After=syslog.target network.target
+
+[Service]
+Type=simple
+Environment="DISPLAY=:0"
+WorkingDirectory=/home/kintai/server/
+ExecStart=/home/kintai/server/.venv/bin/python sw.py
+KillMode=process
+Restart=always
+User=kintai
+Group=root
+
+[Install]
+WantedBy=multi-user.target
