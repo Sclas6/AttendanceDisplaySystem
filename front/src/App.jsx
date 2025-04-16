@@ -148,7 +148,7 @@ function App() {
     }
     const interval = setInterval(() => {
       fetchData();
-    }, 10000);
+    }, 2000);
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode_sort]);

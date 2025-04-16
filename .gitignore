@@ -5,5 +5,7 @@ graphs/
 *.pkl
 test.*
 users.*
+data.json
 .lgd-nfy0
 format.js
+settings
