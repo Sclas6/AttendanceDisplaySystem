@@ -132,7 +132,7 @@ def fix_json(data_raw: dict):
     for i, d in enumerate(data["content"]):
         if d["name"] == user["name"]:
             data["content"][i] = user
-        updated = True
+            updated = True
     if not updated:
         data["content"].append(user)
 
