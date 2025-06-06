@@ -153,6 +153,16 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode_sort]);
 
+  React.useEffect(() => {
+    async function fetchData() {
+      window.location.reload()
+    }
+    const interval = setInterval(() => {
+      fetchData()
+    }, 1800000)
+    return () => clearInterval(interval)
+  }, []) 
+
   const handleKewDownEnter = () => {
     switch (getMode()) {
       case 0:
